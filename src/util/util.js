@@ -6,10 +6,16 @@ const generateImageUrl = (date) => {
 
 const formatDate = (date) => {
   const reversed = date.split('-').reverse().join('/')
-  return new Date(reversed).toDateString()
+  return new Date(reversed)
+}
+
+const getDayOfTheWeek = (date) => {
+  const weekDay = formatDate(date);
+  return weekDay.getDay();
 }
 
 export {
   formatDate,
-  generateImageUrl
+  generateImageUrl,
+  getDayOfTheWeek
 }

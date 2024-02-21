@@ -4,7 +4,7 @@ import Month from "../components/month";
 export default function Home() {
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="p-5 md:p-24 sm:p-16 overflow-x-auto">
       {months.map(el => <Month key={el} data={el} />)}
     </main>
   )
