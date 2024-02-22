@@ -7,6 +7,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        // Simple 16 column grid
+        'week': 'repeat(7, max-content)',
+
+        // Complex site-specific column configuration
+        'footer': '200px minmax(900px, 1fr) 100px',
+      },
+      fontSize: {
+        xxs: '0.7rem',
+        mobxxs: '0.6rem'
+      },
       colors: {
         npr: '#FCD7D7',
         pn: '#a6dba4',

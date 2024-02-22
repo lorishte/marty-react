@@ -1,11 +1,17 @@
 import { months } from "../data/data";
 import Month from "../components/month";
 
-export default function Home() {
+const Home = () => {
 
   return (
-    <main className="p-5 md:p-24 sm:p-16 overflow-x-auto">
-      {months.map(el => <Month key={el} data={el} />)}
+    <main className="px-4 py-10 md:w-5/6 mx-auto max-w-screen-xl overflow-x-auto">
+      {months.map((el, index) => <Month key={el}
+                                        month={el[0]}
+                                        days={el[1]}
+                                        defaultOpen={index === months.length - 1}/>
+      )}
     </main>
   )
 }
+
+export default Home

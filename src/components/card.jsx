@@ -17,7 +17,7 @@ const Card = (props) => {
 
   return (
     <div className='grid gap-1 content-start'>
-      <div className='relative w-auto min-h-48 rounded-md overflow-hidden'>
+      <div className='relative w-auto h-16 md:h-32 lg:h-40 rounded-md overflow-hidden'>
         <Image src={generateImageUrl(date)}
                alt={date}
                fill
@@ -27,10 +27,10 @@ const Card = (props) => {
       </div>
 
       <div className='grid gap-1'>
-        <p className='text-xs self-start'>
+        <p className='text-mobxxs md:text-xxs self-start'>
           {formatDate(date).toDateString()}
         </p>
-        <p className='text-xs grid gap-1 self-start'>
+        <p className='text-mobxxs md:text-xxs grid gap-1 self-start'>
           {medicines.map(el => renderStyle(el))}
         </p>
       </div>
