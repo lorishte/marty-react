@@ -7,6 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+      },
       gridTemplateColumns: {
         // Simple 16 column grid
         'week': 'repeat(7, max-content)',

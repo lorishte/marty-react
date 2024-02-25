@@ -17,7 +17,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={noahFont.variable}>{children}</body>
+    <body className={noahFont.variable}>
+      {children}
+    </body>
+    <div id="backdrop-root"/>
+    <div id="overlay-root"/>
     </html>
   )
 }

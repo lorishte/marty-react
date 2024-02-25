@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { formatDate, generateImageUrl } from "../util/util";
+import Modal from "./modals/Modal";
 
 const Card = (props) => {
   const { date, medicines } = props.data
@@ -15,8 +16,13 @@ const Card = (props) => {
       return <span className='justify-self-start px-2 py-1 rounded-md bg-dmtx' key={date + el}>{el}</span>
   }
 
+  const showModal = (e) => {
+    console.log(222)
+    console.log(e.target)
+  }
+
   return (
-    <div className='grid gap-1 content-start'>
+    <div className='grid gap-1 content-start' onClick={(e) => showModal(e)}>
       <div className='relative w-auto h-16 md:h-32 lg:h-40 rounded-md overflow-hidden'>
         <Image src={generateImageUrl(date)}
                alt={date}
