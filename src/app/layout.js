@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
+import { GalleryContextProvider } from "../store/gallery-context";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,8 +18,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+
     <body className={noahFont.variable}>
+    <GalleryContextProvider>
       {children}
+    </GalleryContextProvider>
+
     </body>
     <div id="backdrop-root"/>
     <div id="overlay-root"/>

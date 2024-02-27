@@ -1,11 +1,11 @@
 import ReactDOM from "react-dom"
 import ModalBackdrop from "./ModalBackdrop";
 
-const Modal = (props) => {
+const ModalOverlay = (props) => {
     const { element } = props
 
     return (
-        <div className='modal'>
+        <div className=''>
             {ReactDOM.createPortal(<ModalBackdrop onConfirm={() => {
                 }}/>,
                 document.getElementById('backdrop-root'))}
@@ -16,4 +16,4 @@ const Modal = (props) => {
     )
 }
 
-export default Modal
+export default ModalOverlay

@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { formatDate, generateImageUrl } from "../util/util";
-import Modal from "./modals/Modal";
+import { useGalleryContext } from "../store/gallery-context";
+
 
 const Card = (props) => {
   const { date, medicines } = props.data
+  const { showImage } = useGalleryContext()
 
   const renderStyle = (el) => {
     if (el === 'Neprolysin')
@@ -16,20 +18,19 @@ const Card = (props) => {
       return <span className='justify-self-start px-2 py-1 rounded-md bg-dmtx' key={date + el}>{el}</span>
   }
 
-  const showModal = (e) => {
-    console.log(222)
-    console.log(e.target)
-  }
 
   return (
-    <div className='grid gap-1 content-start' onClick={(e) => showModal(e)}>
-      <div className='relative w-auto h-16 md:h-32 lg:h-40 rounded-md overflow-hidden'>
+    <div className='grid gap-1 content-start'>
+      <div className='relative w-auto h-16 md:h-32 lg:h-40 rounded-md overflow-hidden'
+           onClick={() => showImage(date)}>
+
         <Image src={generateImageUrl(date)}
                alt={date}
                fill
           // width={100}
           // height={300}
                className='object-cover'/>
+
       </div>
 
       <div className='grid gap-1'>

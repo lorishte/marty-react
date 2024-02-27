@@ -181,7 +181,13 @@ const months = [
   ]],
 ]
 
+const images = []
+months.forEach(el => {
+  images.push(...[...el[1]])
+})
+
 export {
   mapMedicineClasses,
-  months
+  months,
+  images
 }
