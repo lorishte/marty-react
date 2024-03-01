@@ -1,14 +1,12 @@
 'use client'
-
 import React, { useEffect, useState } from 'react';
 import dynamic from "next/dist/shared/lib/app-dynamic";
 import MonthHeader from "./MonthHeader";
-// import MonthDays from "./MonthDays";
 
 const MonthLazy = dynamic(
   () => import("./MonthDays"),
   {
-    ssr: false, // to disable pre-rendering on the server
+    ssr: true, // to disable pre-rendering on the server
     loading: () => <p>Loading...</p>
   }
 )
@@ -27,7 +25,9 @@ const Month = (props) => {
 
       <MonthHeader isOpen={isOpen} month={month} onClick={() => setIsOpen(!isOpen)}/>
 
-      {isOpen && <MonthLazy isOpen={isOpen} days={days} defaultOpen={defaultOpen} />}
+      {isOpen && <MonthLazy isOpen={isOpen}
+                            days={days}
+                            defaultOpen={defaultOpen} />}
 
     </div>
   );

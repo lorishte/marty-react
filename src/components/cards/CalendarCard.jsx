@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { formatDate, generateImageUrl } from "../util/util";
-import { useGalleryContext } from "../store/gallery-context";
+import { formatDate, generateImageUrl } from "../../util/util";
+import { useGalleryContext } from "../../store/gallery-context";
 
 
-const Card = (props) => {
+const CalendarCard = (props) => {
   const { defaultOpen } = props
   const { date, medicines } = props.data
   const { showImage } = useGalleryContext()
@@ -21,10 +21,10 @@ const Card = (props) => {
 
 
   return (
-    <div className='grid gap-1 content-start'>
-      <div className='relative w-auto h-16 md:h-32 lg:h-40 rounded-md overflow-hidden'
-           onClick={() => showImage(date)}>
+    <div className='grid gap-1 content-start hover:cursor-pointer'>
 
+      <div className='relative w-auto h-auto md:h-32 lg:h-40 rounded-md overflow-hidden'
+           onClick={() => showImage(date)}>
         <Image src={generateImageUrl(date)}
                alt={date}
                fill
@@ -33,16 +33,20 @@ const Card = (props) => {
                priority={defaultOpen}/>
       </div>
 
+
       <div className='grid gap-1'>
+
         <p className='text-mobxxs md:text-xxs self-start'>
           {formatDate(date).toDateString()}
         </p>
+
         <p className='text-mobxxs md:text-xxs grid gap-1 self-start'>
           {medicines.map(el => renderStyle(el))}
         </p>
+
       </div>
     </div>
   )
 }
 
-export default Card
+export default CalendarCard

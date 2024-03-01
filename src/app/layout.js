@@ -19,13 +19,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
-    <body className={noahFont.variable}>
+    <body className={noahFont.variable + ' relative'}>
     <GalleryContextProvider>
       {children}
     </GalleryContextProvider>
 
-    <div id="backdrop-root"/>
-    <div id="overlay-root"/>
+    <div id="backdrop-root" />
+    <div id="overlay-root" />
 
     </body>
 

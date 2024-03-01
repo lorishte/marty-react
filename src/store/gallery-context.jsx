@@ -5,10 +5,11 @@ import { images } from "../data/data";
 
 // Add default values to be able to use suggestion on import
 const GalleryContext = createContext({
+  isOpen: Boolean,
+  setSelectedImageIndex: Number,
   openGallery: () => {},
   closeGallery: () => {},
   showImage: () => {},
-  setSelectedImageIndex: () => {},
   showNextImage: () => {},
   showPrevImage: () => {},
 })
@@ -25,20 +26,28 @@ export const GalleryContextProvider = ({ children }) => {
 
   const closeGallery = () => setIsOpen(false)
 
-  const showNextImage = () => {
-    const imageIndex = images.findIndex(el => el.date === date)
-    setSelectedImageIndex(imageIndex)
-    setSelectedImageIndex(selectedImageIndex + 1)
-  }
-
-  const showPrevImage = () => {
-    setSelectedImageIndex(selectedImageIndex - 1)
-  }
-
   const showImage = (date) => {
     const imageIndex = images.findIndex(el => el.date === date)
     setSelectedImageIndex(imageIndex)
+    setIsOpen(true)
   }
+
+  const showNextImage = () => {
+    if (selectedImageIndex === images.length - 1) {
+      setSelectedImageIndex(0)
+    } else {
+      setSelectedImageIndex(selectedImageIndex + 1)
+    }
+  }
+
+  const showPrevImage = () => {
+    if (selectedImageIndex === 0) {
+      setSelectedImageIndex(images.length - 1)
+    } else {
+      setSelectedImageIndex(selectedImageIndex - 1)
+    }
+  }
+
 
   return (
     <GalleryContext.Provider value={{

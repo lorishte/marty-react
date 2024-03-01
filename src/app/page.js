@@ -1,6 +1,7 @@
 import { months } from "../data/data";
 import Month from "../components/month/Month";
 import { arrangeWeekDays } from "../util/util";
+import Gallery from "../components/Gallery";
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
                  days={el[1]}
                  defaultOpen={index === months.length - 1}/>
         )}
+        <Gallery />
       </main>
   )
 }
