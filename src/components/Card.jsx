@@ -4,6 +4,7 @@ import { useGalleryContext } from "../store/gallery-context";
 
 
 const Card = (props) => {
+  const { defaultOpen } = props
   const { date, medicines } = props.data
   const { showImage } = useGalleryContext()
 
@@ -27,10 +28,9 @@ const Card = (props) => {
         <Image src={generateImageUrl(date)}
                alt={date}
                fill
-          // width={100}
-          // height={300}
-               className='object-cover'/>
-
+               className='object-cover'
+               sizes="100%"
+               priority={defaultOpen}/>
       </div>
 
       <div className='grid gap-1'>

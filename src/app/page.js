@@ -1,5 +1,5 @@
 import { months } from "../data/data";
-import Month from "../components/Month";
+import Month from "../components/month/Month";
 import { arrangeWeekDays } from "../util/util";
 
 

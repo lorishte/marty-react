@@ -24,9 +24,11 @@ export default function RootLayout({ children }) {
       {children}
     </GalleryContextProvider>
 
-    </body>
     <div id="backdrop-root"/>
     <div id="overlay-root"/>
+
+    </body>
+
     </html>
   )
 }
