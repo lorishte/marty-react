@@ -27,7 +27,7 @@ const Month = (props) => {
 
       {isOpen && <MonthLazy isOpen={isOpen}
                             days={days}
-                            defaultOpen={defaultOpen} />}
+                            defaultOpen={defaultOpen}/>}
 
     </div>
   );

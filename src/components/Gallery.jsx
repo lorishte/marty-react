@@ -21,11 +21,11 @@ const Gallery = () => {
 
       {ReactDOM.createPortal(
         <div>
-          <button className='fixed top-1/2 left-2 translate-y-[-50%] px-4 py-2 bg-zinc-400 rounded-md hover:bg-slate-200 transition duration-200'
-                  onClick={showPrevImage}>Prev
+          <button className='absolute top-1/2 left-5 translate-y-[-50%] px-4 py-2 bg-zinc-600 rounded-md hover:bg-emerald-300 text-zinc-200 transition duration-200 rotate-180'
+                  onClick={showPrevImage}>&#10140;
           </button>
-          <button className='fixed top-1/2 right-2 translate-y-[-50%] px-4 py-2 bg-zinc-400 rounded-md hover:bg-slate-200 transition duration-200'
-                  onClick={showNextImage}>Next
+          <button className='absolute top-1/2 right-5 translate-y-[-50%] px-4 py-2 bg-zinc-600 rounded-md hover:bg-emerald-300 text-zinc-200 transition duration-200'
+                  onClick={showNextImage}>&#10140;
           </button>
         </div>,
         document.getElementById('overlay-root'))}

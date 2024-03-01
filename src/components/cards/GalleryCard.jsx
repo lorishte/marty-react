@@ -18,16 +18,16 @@ const GalleryCard = (props) => {
 
 
   return (
-    <div className='grid gap-2 justify-center'>
-      <div className='relative w-fit rounded-lg overflow-hidden'>
-        <img className='w-auto h-[80vh]' src={generateImageUrl(date)} alt={date}/>
+    <div className='grid grid-rows-[1fr_max-content] gap-2 justify-center w-[80vw] h-[80vh]'>
+      <div className='grid content-center relative rounded-lg overflow-hidden'>
+        <img className='' src={generateImageUrl(date)} alt={date}/>
       </div>
 
       <div className='grid gap-1 justify-center'>
         <p className='text-mobxxs md:text-xxs text-zinc-300'>
           {formatDate(date).toDateString()}
         </p>
-        <p className='text-mobxxs md:text-xxs grid gap-1 justify-center'>
+        <p className='text-mobxxs md:text-xxs grid gap-1 justify-center self-start'>
           {medicines.map(el => renderStyle(el))}
         </p>
       </div>

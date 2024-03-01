@@ -10,7 +10,7 @@ const ModalOverlay = (props) => {
         document.getElementById('backdrop-root'))}
 
       {ReactDOM.createPortal(
-        <div className='fixed top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-fit w-[80vw] h-[80vh]'>
+        <div className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-fit w-[80vw] h-[80vh]'>
           {element}
         </div>,
         document.getElementById('overlay-root'))}

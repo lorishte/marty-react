@@ -23,7 +23,7 @@ const CalendarCard = (props) => {
   return (
     <div className='grid gap-1 content-start hover:cursor-pointer'>
 
-      <div className='relative w-auto h-auto md:h-32 lg:h-40 rounded-md overflow-hidden'
+      <div className='relative w-auto h-16 md:h-32 lg:h-40 rounded-md overflow-hidden'
            onClick={() => showImage(date)}>
         <Image src={generateImageUrl(date)}
                alt={date}
