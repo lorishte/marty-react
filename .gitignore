@@ -37,9 +37,13 @@ next-env.d.ts
 
 .idea
 .idea/vcs.xml
-/public/images/01-2024/jpg/
-/public/images/02-2024/jpg/
 /public/images/09-2023/jpg/
 /public/images/10-2023/jpg/
 /public/images/11-2023/jpg/
 /public/images/12-2023/jpg/
+/public/images/01-2024/jpg/
+/public/images/02-2024/jpg/
+/public/images/03-2024/jpg/
+/public/images/04-2024/jpg/
+/public/images/05-2024/jpg/
+/public/images/06-2024/jpg/
