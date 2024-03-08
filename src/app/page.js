@@ -6,7 +6,7 @@ import Gallery from "../components/Gallery";
 
 const Home = () => {
   return (
-      <main className="grid w-max min-w-full px-4 py-10 md:w-5/6 mx-auto max-w-screen-xl">
+      <main className="grid max-w-5xl px-4 py-10 md:w-5/6 mx-auto max-w-screen-xl">
         {arrangeWeekDays(months).map((el, index) =>
           <Month key={el}
                  month={el[0]}
