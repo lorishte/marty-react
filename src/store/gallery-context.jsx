@@ -1,5 +1,5 @@
 'use client'
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { images } from "../data/data";
 
 
@@ -17,10 +17,6 @@ const GalleryContext = createContext({
 export const GalleryContextProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedImageIndex, setSelectedImageIndex] = useState(null)
-
-  useEffect(() => {
-    console.log(selectedImageIndex)
-  }, [selectedImageIndex])
 
   const openGallery = () => setIsOpen(true)
 

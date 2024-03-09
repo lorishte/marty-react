@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import dynamic from "next/dist/shared/lib/app-dynamic";
 import MonthHeader from "./MonthHeader";
 
-const MonthLazy = dynamic(
-  () => import("./MonthDays"),
+const MonthDaysLazy = dynamic(
+  () => import("./MonthDaysPanel"),
   {
     ssr: true, // to disable pre-rendering on the server
     loading: () => <p>Loading...</p>
@@ -21,13 +21,13 @@ const Month = (props) => {
 
 
   return (
-    <div className='grid gap-4 mb-3 w-full'>
+    <div className='grid gap-4 w-full' data-name='month'>
 
       <MonthHeader isOpen={isOpen} month={month} onClick={() => setIsOpen(!isOpen)}/>
 
-      {isOpen && <MonthLazy isOpen={isOpen}
-                            days={days}
-                            defaultOpen={defaultOpen}/>}
+      <MonthDaysLazy isOpen={isOpen}
+                 days={days}
+                 defaultOpen={defaultOpen}/>
 
     </div>
   );

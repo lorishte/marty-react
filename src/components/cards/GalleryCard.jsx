@@ -18,7 +18,7 @@ const GalleryCard = (props) => {
 
 
   return (
-    <div className='grid grid-rows-[1fr_max-content] gap-2 justify-center w-[100%]'>
+    <div className='grid grid-rows-[1fr_max-content] gap-2 justify-center'>
       <img className='block max-w-[90vw] max-h-[80vh]' src={generateImageUrl(date)} alt={date}/>
 
       <div className='grid gap-1 justify-center'>

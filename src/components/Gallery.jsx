@@ -13,26 +13,25 @@ const Gallery = () => {
 
   const currentImage = images[selectedImageIndex]
 
-
   return (
     <>
-      <ModalOverlay onCloseGallery={closeGallery}
+      <ModalOverlay onClose={closeGallery}
                     element={<GalleryCard data={currentImage}/>}/>
 
       {ReactDOM.createPortal(
-        <div>
+        <div data-name='modal-controls'>
           <button
-            className='fixed top-5 right-5 px-4 py-2 bg-zinc-600 rounded-md hover:bg-emerald-300 text-zinc-200 transition duration-200'
+            className='fixed top-5 right-5 px-4 py-2 bg-zinc-600 text-xl leading-none rounded-md hover:bg-zinc-800 text-zinc-200 transition duration-200'
             onClick={closeGallery}>&#215;
           </button>
 
           <button
-            className='fixed top-1/2 left-5 translate-y-[-50%] px-4 py-2 bg-zinc-600 rounded-md hover:bg-emerald-300 text-zinc-200 transition duration-200 rotate-180'
+            className='fixed top-1/2 left-5 translate-y-[-50%] px-4 py-2 bg-zinc-600 rounded-md hover:bg-zinc-800 text-zinc-200 transition duration-200 rotate-180'
             onClick={showPrevImage}>&#10140;
           </button>
 
           <button
-            className='fixed top-1/2 right-5 translate-y-[-50%] px-4 py-2 bg-zinc-600 rounded-md hover:bg-emerald-300 text-zinc-200 transition duration-200'
+            className='fixed top-1/2 right-5 translate-y-[-50%] px-4 py-2 bg-zinc-600 rounded-md hover:bg-zinc-800 text-zinc-200 transition duration-200'
             onClick={showNextImage}>&#10140;
           </button>
         </div>,

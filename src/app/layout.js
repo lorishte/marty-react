@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 
 import { GalleryContextProvider } from "../store/gallery-context";
+import { CompareImagesContextProvider } from "../store/compare-images-context";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,7 +29,9 @@ export default function RootLayout({ children }) {
 
     <body className={noahFont.variable}>
     <GalleryContextProvider>
-      {children}
+      <CompareImagesContextProvider>
+        {children}
+      </CompareImagesContextProvider>
     </GalleryContextProvider>
 
     <div id="backdrop-root"/>
