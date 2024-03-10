@@ -16,7 +16,11 @@ const Gallery = () => {
   return (
     <>
       <ModalOverlay onClose={closeGallery}
-                    element={<GalleryCard data={currentImage}/>}/>
+                    element={
+                      <div data-name='modal-overlay' className='fixed w-max top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]'>
+                        <GalleryCard data={currentImage}/>
+                      </div>}/>
+
 
       {ReactDOM.createPortal(
         <div data-name='modal-controls'>

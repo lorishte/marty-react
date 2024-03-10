@@ -4,6 +4,7 @@ import { formatDate, generateImageUrl } from "../../util/util";
 
 const GalleryCard = (props) => {
   const { date, medicines } = props.data
+  const { compareImages } = props
 
   const renderStyle = (el) => {
     if (el === 'Neprolysin')
@@ -18,8 +19,8 @@ const GalleryCard = (props) => {
 
 
   return (
-    <div className='grid grid-rows-[1fr_max-content] gap-2 justify-center'>
-      <img className='block max-w-[90vw] max-h-[80vh]' src={generateImageUrl(date)} alt={date}/>
+    <div className='grid grid-rows-[1fr_max-content] gap-2 justify-center overflow-hidden'>
+      <img className={compareImages ? 'block max-w-[60vw] max-h-[80vh] self-center' : 'block max-w-[90vw] max-h-[80vh]'} src={generateImageUrl(date)} alt={date}/>
 
       <div className='grid gap-1 justify-center'>
         <p className='text-mobxxs md:text-xxs text-zinc-300'>

@@ -6,13 +6,10 @@ const ModalOverlay = (props) => {
 
   return (
     <>
-      {ReactDOM.createPortal(<ModalBackdrop onCloseGallery={onCloseGallery}/>,
+      {ReactDOM.createPortal(<ModalBackdrop onClose={onClose}/>,
         document.getElementById('backdrop-root'))}
 
-      {ReactDOM.createPortal(
-        <div data-name='modal-overlay' className='fixed w-full top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]'>
-          {element}
-        </div>,
+      {ReactDOM.createPortal(element,
         document.getElementById('overlay-root'))}
     </>
   )

@@ -8,7 +8,7 @@ const CalendarCard = (props) => {
   const { isHighPriority } = props
   const { date, medicines } = props.data
   const { showImage } = useGalleryContext()
-  const { addImageToCompare } = useCompareImagesContext()
+  const { selectedImages, addRemoveImageToCompare } = useCompareImagesContext()
 
   const renderStyle = (el) => {
     if (el === 'Neprolysin')
@@ -45,7 +45,10 @@ const CalendarCard = (props) => {
         </p>
       </div>
 
-      <input type='checkbox' className='absolute top-2 right-2' onClick={() => addImageToCompare(date)}/>
+      <input type='checkbox'
+             className='absolute top-2 right-2'
+             checked={selectedImages.includes(date)}
+             onChange={() => addRemoveImageToCompare(date)}/>
     </div>
   )
 }

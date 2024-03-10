@@ -6,10 +6,8 @@ import { images } from "../data/data";
 const CompareImagesContext = createContext({
   isOpen: Boolean,
   selectedImages: Array,
-  openModal: () => {},
   closeModal: () => {},
-  addImageToCompare: () => {},
-  showImages: () => {},
+  addRemoveImageToCompare: () => {}
 })
 
 export const CompareImagesContextProvider = ({ children }) => {
@@ -17,37 +15,36 @@ export const CompareImagesContextProvider = ({ children }) => {
   const [selectedImages, setSelectedImages] = useState([])
 
   useEffect(() => {
-    console.log(selectedImages)
+    if (selectedImages.length === 2) openModal()
   },[selectedImages])
 
   const openModal = () => setIsOpen(true)
 
-  const closeModal = () => setIsOpen(false)
+  const closeModal = () => {
+    setSelectedImages([])
+    setIsOpen(false)
+  }
 
-  const addImageToCompare = (date) => {
-    const imageIndex = images.findIndex(el => el.date === date)
+  const addRemoveImageToCompare = (date) => {
+    // const imageIndex = images.findIndex(el => el.date === date)
 
-    if (selectedImages.includes(imageIndex)) {
-      const filtered = selectedImages.filter(el => el !== imageIndex)
+    if (selectedImages.includes(date)) {
+      const filtered = selectedImages.filter(el => el !== date)
       setSelectedImages(filtered)
     } else {
-      setSelectedImages([...selectedImages, imageIndex])
+      if (selectedImages.length >= 2) return
+      setSelectedImages([...selectedImages, date])
     }
   }
 
-  const showImages = (date) => {
-
-  }
 
 
   return (
     <CompareImagesContext.Provider value={{
       isOpen,
       selectedImages,
-      addImageToCompare,
-      showImages,
-      openModal,
-      closeModal,
+      addRemoveImageToCompare,
+      closeModal
     }}>
       {children}
     </CompareImagesContext.Provider>
