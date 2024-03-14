@@ -1,13 +1,12 @@
 import React from 'react';
 import CalendarCard from "../cards/CalendarCard";
-import { CompareImagesContextProvider } from "../../store/compare-images-context";
 
 const MonthDaysPanel = (props) => {
   const { days, isOpen, defaultOpen } = props
 
   return (
       <div data-name='month-days-panel'
-           className={`${isOpen ? "max-h-full" : "max-h-0"} grid grid-cols-week md:grid-cols-7 gap-4 px-4 overflow-hidden transition-[max-height] duration-1000 ease-in`}>
+           className={`${isOpen ? "max-h-full" : "max-h-0"} grid grid-cols-week md:grid-cols-7 gap-2 md:gap-3 px-4 overflow-hidden transition-[max-height] duration-700 ease-in-out`}>
         {days.map((el, index) => {
             const dayCard = <CalendarCard key={el.date} data={el} isHighPriority={defaultOpen}/>
 

@@ -25,7 +25,7 @@ const CalendarCard = (props) => {
   return (
     <div data-name='calendar-card' className='relative grid gap-1 content-start hover:cursor-pointer'>
 
-      <div className='relative w-auto h-20 md:h-32 lg:h-40 rounded-md overflow-hidden'
+      <div className='relative h-20 md:h-32 lg:h-40 rounded-md overflow-hidden'
            onClick={() => showImage(date)}>
         <Image src={generateImageUrl(date)}
                alt={date}
@@ -46,7 +46,7 @@ const CalendarCard = (props) => {
       </div>
 
       <input type='checkbox'
-             className='absolute top-2 right-2'
+             className='absolute top-1 right-1 md:top-2 md:right-2 w-5 h-5 md:w-4 md:h-4'
              checked={selectedImages.includes(date)}
              onChange={() => addRemoveImageToCompare(date)}/>
     </div>

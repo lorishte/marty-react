@@ -1,13 +1,12 @@
 'use client'
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { images } from "../data/data";
 
 
 // Add default values to be able to use suggestion on import
 const GalleryContext = createContext({
   isOpen: Boolean,
-  setSelectedImageIndex: Number,
-  openGallery: () => {},
+  selectedImageIndex: Number,
   closeGallery: () => {},
   showImage: () => {},
   showNextImage: () => {},
@@ -18,9 +17,11 @@ export const GalleryContextProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
   const [selectedImageIndex, setSelectedImageIndex] = useState(null)
 
-  const openGallery = () => setIsOpen(true)
 
-  const closeGallery = () => setIsOpen(false)
+  const closeGallery = () => {
+    setIsOpen(false)
+    setSelectedImageIndex(null)
+  }
 
   const showImage = (date) => {
     const imageIndex = images.findIndex(el => el.date === date)
@@ -50,7 +51,6 @@ export const GalleryContextProvider = ({ children }) => {
       isOpen,
       selectedImageIndex,
       showImage,
-      openGallery,
       closeGallery,
       showNextImage,
       showPrevImage

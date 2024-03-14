@@ -14,7 +14,7 @@ module.exports = {
       },
       gridTemplateColumns: {
         // Simple 16 column grid
-        'week': 'repeat(7, max-content)',
+        'week': 'repeat(7, 1fr)',
 
         // Complex site-specific column configuration
         'footer': '200px minmax(900px, 1fr) 100px',
