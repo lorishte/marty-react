@@ -5,8 +5,10 @@ const MonthHeader = (props) => {
   const { isOpen, onClick, month } = props
 
   return (
-    <div className={`${isOpen ? "border-zinc-400" : "border-transparent"} flex items-center bg-zinc-200 px-6 py-3 
-      rounded-full mb-2 hover:cursor-pointer hover:bg-zinc-300 border transition duration-350`}
+    <div className={`${isOpen ? "border-zinc-400" : "border-zinc-200"} 
+      flex items-center px-6 py-3 mb-2 rounded-full 
+      border transition duration-350
+      hover:cursor-pointer hover:border-zinc-400`}
          onClick={onClick}>
 
       <h2 className='grow font-semibold text-l md:text-xl '>{month}</h2>
