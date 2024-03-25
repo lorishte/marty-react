@@ -23,9 +23,12 @@ const arrangeWeekDays = (months) => {
     const currentMonthDays = currentMonth[1]
     const nextMonthDays = months[i + 1]
 
+    //Get the number of the last day of the current week
     const lastDayWeekNumber = currentMonthDays[currentMonthDays.length - 1].date
     let dayNumber = getDayOfTheWeek(lastDayWeekNumber)
 
+    // If the day is not Sunday (index 0) and there are more more days in the nex month
+    // we add them to the current week (and remove them from next month week)
     if (dayNumber !== 0 && nextMonthDays) {
       for (let j = 0; j < 7 - dayNumber; j++) {
         const dayToAdd = nextMonthDays[1].shift()

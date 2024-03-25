@@ -1,6 +1,7 @@
 import { months } from "../data/data";
-import Month from "../components/month/Month";
 import { arrangeWeekDays } from "../util/util";
+
+import Month from "../components/month/Month";
 import Gallery from "../components/Gallery";
 import CompareImages from "../components/CompareImages";
 

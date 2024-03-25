@@ -26,8 +26,8 @@ const Month = (props) => {
       <MonthHeader isOpen={isOpen} month={month} onClick={() => setIsOpen(!isOpen)}/>
 
       <MonthDaysLazy isOpen={isOpen}
-                 days={days}
-                 defaultOpen={defaultOpen}/>
+                     days={days}
+                     defaultOpen={defaultOpen}/>
 
     </div>
   );
