@@ -8,7 +8,7 @@ import CompareImages from "../components/CompareImages";
 const Home = () => {
 
   return (
-      <main className="min-w-full w-max max-w-screen-xl  px-4 py-10 md:w-5/6 md:min-w-min mx-auto ">
+      <main className="min-w-full w-max max-w-screen-lg px-4 py-10 md:w-5/6 md:min-w-min mx-auto text-[#353535]">
         {arrangeWeekDays(months).map((el, index) =>
           <Month key={el}
                  month={el[0]}
