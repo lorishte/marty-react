@@ -9,9 +9,10 @@ const MonthDaysPanel = (props) => {
 
   return (
     <div data-name='month-days-panel'
-         className={`${isOpen ? "max-h-full pb-10" : "max-h-0 pb-0"} 
-         grid grid-cols-[max-content_repeat(7,_1fr)] gap-2 md:gap-3 px-4 
-         overflow-hidden transition-[max-height] transition-all duration-700 ease-in-out`}>
+         className={`${isOpen ? "max-h-[2000px] pb-10" : "max-h-0 pb-0"} 
+         grid grid-cols-[max-content_repeat(7,_1fr)] gap-2 md:gap-3 
+         h-auto px-4 pt-2 overflow-hidden
+         transition-all duration-1000 ease-in-out`}>
 
       {days.map((el, index) => {
           const dayCard = <CalendarCard key={el.date} data={el} isHighPriority={defaultOpen}/>

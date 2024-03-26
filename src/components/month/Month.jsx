@@ -21,7 +21,7 @@ const Month = (props) => {
 
 
   return (
-    <div className='grid gap-4 w-full' data-name='month'>
+    <div className='' data-name='month'>
 
       <MonthHeader isOpen={isOpen} month={month} onClick={() => setIsOpen(!isOpen)}/>
 
