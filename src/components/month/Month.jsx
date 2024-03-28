@@ -6,13 +6,15 @@ import MonthHeader from "./MonthHeader";
 const MonthDaysLazy = dynamic(
   () => import("./MonthDaysPanel"),
   {
-    ssr: true, // to disable pre-rendering on the server
-    loading: () => <p>Loading...</p>
+    ssr: false, // to disable pre-rendering on the server
+    loading: () => <div className='flex justify-center pb-3'>
+      <span className="loading loading-dots loading-md"/>
+    </div>
   }
 )
 
 const Month = (props) => {
-  const { month, days, defaultOpen } = props
+  const { monthName, monthDays, defaultOpen, monthIndex } = props
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -21,13 +23,14 @@ const Month = (props) => {
 
 
   return (
-    <div className='' data-name='month'>
+    <div data-name='month'>
 
-      <MonthHeader isOpen={isOpen} month={month} onClick={() => setIsOpen(!isOpen)}/>
+      <MonthHeader isOpen={isOpen} monthName={monthName} onClick={() => setIsOpen(!isOpen)}/>
 
       <MonthDaysLazy isOpen={isOpen}
-                     days={days}
-                     defaultOpen={defaultOpen}/>
+                     monthDays={monthDays}
+                     defaultOpen={defaultOpen}
+                     monthIndex={monthIndex}/>
 
     </div>
   );

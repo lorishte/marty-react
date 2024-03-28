@@ -40,10 +40,27 @@ const arrangeWeekDays = (months) => {
   return formatted
 }
 
+const getFirstWeekNumberOfMonth = (monthIndex) => {
+  let weekNumber = 0
+  const arrangedMonths = arrangeWeekDays(months)
+
+  for (let i = 0; i < arrangedMonths.length; i++) {
+
+    if (i === monthIndex) break
+
+    const days = arrangedMonths[i][1]
+    const weeksInMonth = Math.floor(days.length / 7)
+    weekNumber += weeksInMonth
+  }
+
+  return weekNumber
+}
+
 
 export {
   formatDate,
   generateImageUrl,
   getDayOfTheWeek,
-  arrangeWeekDays
+  arrangeWeekDays,
+  getFirstWeekNumberOfMonth
 }

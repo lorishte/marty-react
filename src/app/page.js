@@ -12,9 +12,10 @@ const Home = () => {
       <main className="min-w-full w-max max-w-screen-lg px-4 py-10 md:w-5/6 md:min-w-min mx-auto text-[#353535]">
         {arrangeWeekDays(months).map((el, index) =>
           <Month key={el}
-                 month={el[0]}
-                 days={el[1]}
-                 defaultOpen={index === months.length - 1}/>
+                 monthName={el[0]}
+                 monthDays={el[1]}
+                 defaultOpen={index === months.length - 1}
+                 monthIndex={index}/>
         )}
 
         <Gallery />

@@ -2,7 +2,7 @@ import React from 'react';
 import Image from "next/image";
 
 const MonthHeader = (props) => {
-  const { isOpen, onClick, month } = props
+  const { isOpen, onClick, monthName } = props
 
   return (
     <div className={`${isOpen ? "border-zinc-400" : "border-zinc-200"} 
@@ -11,7 +11,7 @@ const MonthHeader = (props) => {
       hover:cursor-pointer hover:border-zinc-400`}
          onClick={onClick}>
 
-      <h2 className='grow font-semibold text-l md:text-xl '>{month}</h2>
+      <h2 className='grow font-semibold text-l md:text-xl '>{monthName}</h2>
 
       <div className='relative w-2.5 h-2.5'>
         <Image src='/images/arrow_2.png'
