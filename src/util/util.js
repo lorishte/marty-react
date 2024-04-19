@@ -1,8 +1,6 @@
-import { months } from "../data/data";
+import { months } from "@/data/data";
 
 const generateImageUrl = (date) => {
-  if (date === 'no-image') return '/public/images/no-image.jpg'
-  // return `assets/images/${date.substr(3)}/${date}.jpg`
   return `/images/${date.substr(3)}/${date}.webp`
 }
 

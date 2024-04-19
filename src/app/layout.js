@@ -2,8 +2,8 @@ import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
 
-import { GalleryContextProvider } from "../store/gallery-context";
-import { CompareImagesContextProvider } from "../store/compare-images-context";
+import { GalleryContextProvider } from "@/store/gallery-context";
+import { CompareImagesContextProvider } from "@/store/compare-images-context";
 
 const inter = Inter({ subsets: ['latin'] })
 

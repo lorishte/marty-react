@@ -1,10 +1,10 @@
 'use client'
 import React from 'react';
-import { useCompareImagesContext } from "../store/compare-images-context";
+import { useCompareImagesContext } from "@/store/compare-images-context";
 import GalleryCard from "./cards/GalleryCard";
 import ModalOverlay from "./modal/ModalOverlay";
 
-import { images } from "../data/data";
+import { images } from "@/data/data";
 import ReactDOM from "react-dom";
 
 const CompareImages = () => {

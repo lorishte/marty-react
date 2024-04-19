@@ -1,7 +1,7 @@
 import CalendarCard from "../cards/CalendarCard";
-import { getFirstWeekNumberOfMonth } from "../../util/util";
+import { getFirstWeekNumberOfMonth } from "@/util/util";
 
-const MonthDaysPanel = (props) => {
+const DaysPanel = (props) => {
   const { monthDays, isOpen, defaultOpen, monthIndex } = props
 
   let weekNumber = getFirstWeekNumberOfMonth(monthIndex)
@@ -34,4 +34,4 @@ const MonthDaysPanel = (props) => {
   );
 };
 
-export default MonthDaysPanel;
+export default DaysPanel;
