@@ -1,4 +1,4 @@
-import CalendarCard from "../cards/CalendarCard";
+import CalendarCard from "../../cards/CalendarCard";
 import { getFirstWeekNumberOfMonth } from "@/util/util";
 
 const DaysPanel = (props) => {
@@ -9,7 +9,7 @@ const DaysPanel = (props) => {
   return (
     <div data-name='month-days-panel'
          className={`${isOpen ? "max-h-[2000px] pb-10" : "max-h-0 pb-0"} 
-         grid grid-cols-[max-content_repeat(7,_1fr)] gap-2 md:gap-3 
+         grid grid-cols-[max-content_repeat(7,_1fr)] gap-1 md:gap-2 
          h-auto px-4 pt-2 overflow-hidden
          transition-all duration-1000 ease-in-out`}>
 

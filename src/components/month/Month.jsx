@@ -1,11 +1,11 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import dynamic from "next/dist/shared/lib/app-dynamic";
-import MonthHeader from "./MonthHeader";
-import DaysPanel from "@/components/month/DaysPanel";
+import MonthHeader from "./partials/MonthHeader";
+import DaysPanel from "@/components/month/partials/DaysPanel";
 
 const MonthDaysLazy = dynamic(
-  () => import("./DaysPanel"),
+  () => import("./partials/DaysPanel"),
   {
     ssr: false, // to disable pre-rendering on the server
     loading: () => <div className='flex justify-center pb-3'>
