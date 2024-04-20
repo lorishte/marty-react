@@ -5,6 +5,7 @@ import { useGalleryContext } from "../store/gallery-context";
 import { images } from "../data/data";
 import GalleryCard from "./cards/GalleryCard";
 import ReactDOM from "react-dom";
+import ModalControls from "@/components/modal/ModalControls";
 
 const Gallery = () => {
   const { isOpen, selectedImageIndex, closeGallery, showPrevImage, showNextImage } = useGalleryContext()
@@ -43,22 +44,9 @@ const Gallery = () => {
 
 
       {ReactDOM.createPortal(
-        <div data-name='modal-controls'>
-          <button
-            className='fixed top-5 right-5 px-4 py-2 bg-zinc-600 text-xl leading-none rounded-md hover:bg-zinc-800 text-zinc-200 transition duration-200'
-            onClick={closeGallery}>&#215;
-          </button>
-
-          <button
-            className='fixed top-1/2 left-5 translate-y-[-50%] px-4 py-2 bg-zinc-600 rounded-md hover:bg-zinc-800 text-zinc-200 transition duration-200 rotate-180'
-            onClick={showPrevImage}>&#10140;
-          </button>
-
-          <button
-            className='fixed top-1/2 right-5 translate-y-[-50%] px-4 py-2 bg-zinc-600 rounded-md hover:bg-zinc-800 text-zinc-200 transition duration-200'
-            onClick={showNextImage}>&#10140;
-          </button>
-        </div>,
+        <ModalControls onClose={closeGallery}
+                       loadPrev={showPrevImage}
+                       loadNext={showNextImage}/>,
         document.getElementById('overlay-root'))}
     </>
 
