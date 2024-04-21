@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom"
 import ModalBackdrop from "./ModalBackdrop";
 
-const ModalOverlay = (props) => {
+
+const Modal = (props) => {
   const { element, onClose } = props
 
   return (
@@ -15,4 +16,4 @@ const ModalOverlay = (props) => {
   )
 }
 
-export default ModalOverlay
+export default Modal

@@ -19,9 +19,7 @@ const Home = () => {
         )}
 
         <Gallery />
-
         <CompareImages />
-
       </main>
   )
 }

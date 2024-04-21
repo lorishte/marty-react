@@ -11,21 +11,22 @@ const CalendarCard = (props) => {
   const { selectedImages, addRemoveImageToCompare } = useCompareImagesContext()
 
   const renderStyle = (el) => {
-    if (el === 'Neprolysin')
-      return <span className='justify-self-start px-2 py-1 rounded-md bg-npr' key={date + el}>{el}</span>
+    const key = date + el
+    const baseStyle = 'justify-self-start px-2 py-1 rounded-md '
 
-    if (el === 'Post-Neprol')
-      return <span className='justify-self-start px-2 py-1 rounded-md bg-pn' key={date + el}>{el}</span>
-
-    if (el === '2x Dermatix')
-      return <span className='justify-self-start px-2 py-1 rounded-md bg-dmtx' key={date + el}>{el}</span>
+    if (el === 'Neprolysin') return <span className={baseStyle + 'bg-npr'} key={key}>{el}</span>
+    if (el === 'Post-Neprol') return <span className={baseStyle + 'bg-pn'} key={key}>{el}</span>
+    if (el === '2x Dermatix') return <span className={baseStyle + 'bg-dmtx'} key={key}>{el}</span>
   }
+
+  const isChecked = selectedImages.includes(date)
 
   return (
     <div data-name='calendar-card'
-         className='group relative grid gap-1 content-start p-2 rounded border border-transparent
+         className={`group relative grid gap-1 content-start p-2 rounded border border-transparent
          transition-all duration-50 ease-in-out
-         hover:cursor-pointer hover:scale-[1.03] hover:border hover:border-zinc-300'>
+         hover:cursor-pointer hover:scale-[1.03] hover:border hover:border-zinc-300
+         ${isChecked && "bg-[#7bd581]"}`}>
 
       <div className='relative h-20 md:h-32 lg:h-40 rounded-md overflow-hidden'
            onClick={() => showImage(date)}>
@@ -56,7 +57,7 @@ const CalendarCard = (props) => {
              md:top-3 md:right-3 md:w-4 md:h-4
              group-hover:opacity-100
              checked:opacity-100'
-             checked={selectedImages.includes(date)}
+             checked={isChecked}
              onChange={() => addRemoveImageToCompare(date)}/>
     </div>
   )

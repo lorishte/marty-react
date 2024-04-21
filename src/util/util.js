@@ -54,11 +54,20 @@ const getFirstWeekNumberOfMonth = (monthIndex) => {
   return weekNumber
 }
 
+const renderMedicine = (el, key) => {
+
+  const baseStyle = 'justify-self-start px-2 py-1 rounded-md '
+
+  if (el === 'Neprolysin') return <span className={baseStyle + 'bg-npr'} key={key}>{el}</span>
+  if (el === 'Post-Neprol') return <span className={baseStyle + 'bg-pn'} key={key}>{el}</span>
+  if (el === '2x Dermatix') return <span className={baseStyle + 'bg-dmtx'} key={key}>{el}</span>
+}
 
 export {
   formatDate,
   generateImageUrl,
   getDayOfTheWeek,
   arrangeWeekDays,
-  getFirstWeekNumberOfMonth
+  getFirstWeekNumberOfMonth,
+  renderMedicine
 }

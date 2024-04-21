@@ -1,11 +1,12 @@
 'use client'
-import React, { useCallback, useEffect, useState } from 'react';
-import ModalOverlay from "./modal/ModalOverlay";
-import { useGalleryContext } from "../store/gallery-context";
-import { images } from "../data/data";
+import React, { useCallback, useEffect } from 'react';
+import Modal from "./modal/Modal";
+import { useGalleryContext } from "@/store/gallery-context";
+import { images } from "@/data/data";
 import GalleryCard from "./cards/GalleryCard";
 import ReactDOM from "react-dom";
 import ModalControls from "@/components/modal/ModalControls";
+import Delay from "@/components/HOC/Delay";
 
 const Gallery = () => {
   const { isOpen, selectedImageIndex, closeGallery, showPrevImage, showNextImage } = useGalleryContext()
@@ -34,8 +35,8 @@ const Gallery = () => {
   if (!isOpen) return null
 
   return (
-    <>
-      <ModalOverlay onClose={closeGallery}
+    <Delay delayTime={350}>
+      <Modal onClose={closeGallery}
                     element={
                       <div data-name='modal-overlay'
                            className='fixed w-max top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]'>
@@ -48,8 +49,7 @@ const Gallery = () => {
                        loadPrev={showPrevImage}
                        loadNext={showNextImage}/>,
         document.getElementById('overlay-root'))}
-    </>
-
+    </Delay>
   );
 };
 

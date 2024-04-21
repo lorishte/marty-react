@@ -2,10 +2,11 @@
 import React from 'react';
 import { useCompareImagesContext } from "@/store/compare-images-context";
 import GalleryCard from "./cards/GalleryCard";
-import ModalOverlay from "./modal/ModalOverlay";
+import Modal from "./modal/Modal";
 
 import { images } from "@/data/data";
 import ReactDOM from "react-dom";
+import Delay from "@/components/HOC/Delay";
 
 const CompareImages = () => {
   const { selectedImages, isOpen, closeModal } = useCompareImagesContext()
@@ -13,8 +14,8 @@ const CompareImages = () => {
   if (!isOpen) return null
 
   return (
-    <>
-      <ModalOverlay onClose={closeModal}
+    <Delay delayTime={500}>
+      <Modal onClose={closeModal}
                     element={
                       <div data-name='modal-overlay'
                            className='fixed w-[90%] top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] grid grid-cols-2 gap-2'>
@@ -33,7 +34,7 @@ const CompareImages = () => {
           </button>
         </div>,
         document.getElementById('overlay-root'))}
-    </>
+    </Delay>
   );
 };
 
