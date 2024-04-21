@@ -35,7 +35,7 @@ const Gallery = () => {
   if (!isOpen) return null
 
   return (
-    <Delay delayTime={350}>
+    <Delay delayTime={250}>
       <Modal onClose={closeGallery}
                     element={
                       <div data-name='modal-overlay'

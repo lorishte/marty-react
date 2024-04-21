@@ -14,7 +14,7 @@ const CompareImages = () => {
   if (!isOpen) return null
 
   return (
-    <Delay delayTime={500}>
+    <Delay delayTime={350}>
       <Modal onClose={closeModal}
                     element={
                       <div data-name='modal-overlay'

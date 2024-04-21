@@ -34,8 +34,8 @@ export default function RootLayout({ children }) {
       </CompareImagesContextProvider>
     </GalleryContextProvider>
 
-    <div id="backdrop-root"/>
-    <div id="overlay-root"/>
+    <div id="backdrop-root" className='transition-all duration-700 ease-out' style={{opacity: 0}}/>
+    <div id="overlay-root" className='transition-all duration-700 ease-out' style={{opacity: 0}}/>
 
     </body>
 
